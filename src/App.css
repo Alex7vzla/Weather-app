@@ -6,25 +6,7 @@
     color: rgb(49, 45, 45);
 }
 
-.bg-sunny, .bg-rainny, .bg-cloudy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 10px;
-    background-position: center;
-    background-size: cover;
-}
 
-.bg-sunny {
-    background-image: url(./assets/summer-landscape.jpg);
-}
-.bg-rainny {
-    background-image: url(./assets/rainny.jpg);
-}
-.bg-cloudy {
-    background-image: url(./assets/cloud.jpg);
-}
 
 .card {
     display: flex;
@@ -79,3 +61,45 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
+
+@media screen and (min-width: 720px){ 
+.bg-sunny, .bg-rainny, .bg-cloudy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        background-position: center;
+        background-size: cover;
+}
+
+.bg-sunny {
+    background-image: url(./assets/summer-landscape.jpg);
+}
+.bg-rainny {
+    background-image: url(./assets/rainny.jpg);
+}
+.bg-cloudy {
+    background-image: url(./assets/cloud.jpg);
+}
+}
+
+@media screen and (min-width: 320px){
+    .bg-sunny, .bg-rainny, .bg-cloudy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+}
+    .bg-sunny {
+        background-image: url(./assets/summer-landscape-m.jpg);
+    }
+    .bg-rainny {
+        background-image: url(./assets/rainny-m.jpg);
+    }
+    .bg-cloudy {
+        background-image: url(./assets/cloud-m.jpg);
+    }
+
+}
