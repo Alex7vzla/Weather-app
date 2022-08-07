@@ -34,7 +34,7 @@ const Card = ({lat, lon}) => {
     <div>
       <div className={weather?.weather[0].main === 'Clouds' ? 'bg-cloudy':
                       weather?.weather[0].main === 'Rain' ? 'bg-rainny':
-                      weather?.weather[0].main === 'Sunny' ? 'bg-sunny':
+                      weather?.weather[0].main === 'Clear' ? 'bg-sunny':
                       'other-weather'
                       }>
         <div className='card'>
