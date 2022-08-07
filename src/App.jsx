@@ -22,7 +22,9 @@ function App() {
   return (
    
     <div className="App">
-            <Card lon={coords?.lon} lat={coords?.lat}/>
+
+    <Card lon={coords?.lon} lat={coords?.lat} />
+
     </div>
   )
 }

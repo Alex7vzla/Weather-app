@@ -1,29 +1,42 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import 'boxicons'
+import Spinner from './Spinner.jsx'
 
 const Card = ({lat, lon}) => {
   
   const [weather, setWeather] = useState();
   const [temperature, setTemperature] = useState();
   const [isCelsius, setIsCelsius] = useState(true);
+  const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
+
+    setLoading(true);
+
     if(lon){
       const key ='adf54d7cf008f2b456fec0f72b33d1b3';
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
 
+      
+
       axios.get(url)
         .then(res => {
+          
           setWeather(res.data)
+          setLoading(false)
           const temp = {
           celsius: `${Math.round(res.data.main.temp - 273.15)} °C`,
           fahrenheit: `${Math.round((res.data.main.temp -273.15) * 9 / 5 + 32)} °F`
           }
           setTemperature(temp);
+          
         })
         .catch(err => console.log(err))
+    
     }
+  
   }, [lat, lon])
 
   console.log(weather)
@@ -31,6 +44,7 @@ const Card = ({lat, lon}) => {
   const handleClick = () => setIsCelsius(!isCelsius);
 
   return (
+    loading ? <Spinner /> :
     <div>
       <div className={weather?.weather[0].main === 'Clouds' ? 'bg-cloudy':
                       weather?.weather[0].main === 'Rain' ? 'bg-rainny':
@@ -63,6 +77,7 @@ const Card = ({lat, lon}) => {
         </div>
       </div>
     </div>
+     
   )
 
 }
