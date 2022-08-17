@@ -16,7 +16,7 @@ const Card = ({lat, lon}) => {
     setLoading(true);
 
     if(lon){
-      const key ='adf54d7cf008f2b456fec0f72b33d1b3';
+      const key ='94cc46ef083ee4c6abea5dd5e4922b6a';
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
 
       
